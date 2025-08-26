@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+require("dotenv").config();
 const authRoutes = require("./routes/authRoutes");
 const cookieParser = require("cookie-parser");
 const { requireAuth, checkUser } = require("./midddleware/authMiddleware");
@@ -13,16 +14,17 @@ app.use(cookieParser());
 app.set("view engine", "ejs");
 
 // database connection
-
-const dbURI =
-  "mongodb+srv://jeyapriya3377:rOMY7dixmj9X25wI@backenddb.9rf8dby.mongodb.net/AuthenticationDB?retryWrites=true&w=majority&appName=BackendDB";
+const PORT = process.env.PORT || 5000;
+const dbURI = process.env.MONGO_URI;
+// const dbURI =
+//   "mongodb+srv://jeyapriya3377:rOMY7dixmj9X25wI@backenddb.9rf8dby.mongodb.net/AuthenticationDB?retryWrites=true&w=majority&appName=BackendDB";
 mongoose
-  .connect(dbURI, {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
-    useCreateIndex: true,
+  .connect(dbURI)
+  .then((result) => {
+    console.log('DB CONNENCTED');
+    
+    app.listen(PORT);
   })
-  .then((result) => app.listen(3000))
   .catch((err) => console.log(err));
 
 // routes
