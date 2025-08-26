@@ -21,9 +21,8 @@ const dbURI = process.env.MONGO_URI;
 mongoose
   .connect(dbURI)
   .then((result) => {
-    console.log('DB CONNENCTED');
-    
-    app.listen(PORT);
+    console.log("DB CONNENCTED");
+    app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
   })
   .catch((err) => console.log(err));
 

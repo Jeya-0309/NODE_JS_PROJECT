@@ -19,5 +19,8 @@
     "start": "node app.js"
   },
   "keywords": [],
-  "author": ""
+  "author": "",
+  "engines": {
+  "node": "18.x"
+}
 }
