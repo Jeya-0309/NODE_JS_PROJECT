@@ -46,3 +46,7 @@ node-express-jwt-auth/
 
 ## 📂 Project Structure
 
+Live Demo
+[View Live Project](https://node-express-jwt-auth-9pu2.onrender.com/smoothies
+
+
