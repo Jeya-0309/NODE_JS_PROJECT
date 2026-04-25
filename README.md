@@ -1,4 +1,4 @@
-# Node.js JWT Authentication with MongoDB
+# Node.js JWT Authentication with MongoDB 
 
 This project is a **Node.js application** built with **Express.js** and **MongoDB**, implementing **JWT-based authentication** and **cookies** for secure login and signup.
 It also includes a **Home page** and a **Smoothie Drinks list page**.
